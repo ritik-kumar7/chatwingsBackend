@@ -14,9 +14,7 @@ const port = process.env.PORT || 4000;
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(cors({
-    origin: process.env.NODE_ENV === "production" 
-        ? ["https://chatwingsbackend.onrender.com", "http://localhost:5173", "http://localhost:3000"]
-        : true,
+    origin: "*",
     credentials: true
 }));
 app.use(cookieParser());
